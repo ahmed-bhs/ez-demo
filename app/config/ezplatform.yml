@@ -52,6 +52,11 @@ ezpublish:
             http_cache:
                 purge_servers: ['%purge_server%']
 
+            # existing content_view keys
+            user_registration:
+                templates:
+                    form: 'user/registration_form.html.twig'
+                    confirmation: 'user/registration_confirmation.html.twig'
 
             # existing keys, do not change them
             content_view:
