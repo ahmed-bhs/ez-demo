@@ -27,6 +27,12 @@ ezpublish:
 
     # System settings, grouped by siteaccess and/or siteaccess group
     system:
+        default:
+            image_variations:
+                ride_list:
+                    reference: null
+                    filters:
+                        - {name: geometry/scaledownonly, params: [140, 100]}
         site_group:
             # Cache pool service, needs to be different per repository (database) on multi repository install.
             cache_service_name: '%cache_pool%'
@@ -51,14 +57,19 @@ ezpublish:
             content_view:
                 full:
                     root_folder:
-                        template: 'full/root_folder.html.twig'
+                        template: "full/root_folder.html.twig"
                         match:
                             Id\Location: 2
-                    ride:
-                        template: 'full/ride.html.twig'
+                    full_ride:
+                        template: "full/ride.html.twig"
                         match:
-                            Identifier\ContentType: 'ride'
+                            Identifier\ContentType: "ride"
 
+                line:
+                    line_ride:
+                        template: "line/ride.html.twig"
+                        match:
+                            Identifier\ContentType: "ride"
         # WARNING: Do not remove or rename this group.
         admin_group:
             cache_service_name: '%cache_pool%'
