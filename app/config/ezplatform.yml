@@ -46,6 +46,19 @@ ezpublish:
             http_cache:
                 purge_servers: ['%purge_server%']
 
+
+            # existing keys, do not change them
+            content_view:
+                full:
+                    root_folder:
+                        template: 'full/root_folder.html.twig'
+                        match:
+                            Id\Location: 2
+                    ride:
+                        template: 'full/ride.html.twig'
+                        match:
+                            Identifier\ContentType: 'ride'
+
         # WARNING: Do not remove or rename this group.
         admin_group:
             cache_service_name: '%cache_pool%'
